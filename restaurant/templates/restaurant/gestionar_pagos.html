@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestionar Pagos</title>
+</head>
+<body>
+    <h1>Gestionar Pagos</h1>
+    <a href="{% url 'agregar_pago' %}">Agregar Nuevo Pago</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Pedido</th>
+                <th>Monto</th>
+                <th>Fecha</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pago in pagos %}
+            <tr>
+                <td>{{ pago.pedido.pk }}</td>
+                <td>{{ pago.monto }}</td>
+                <td>{{ pago.fecha }}</td>
+                <td>
+                    <a href="{% url 'editar_pago' pago.pk %}">Editar</a>
+                    <a href="{% url 'eliminar_pago' pago.pk %}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

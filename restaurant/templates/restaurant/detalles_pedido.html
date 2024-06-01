@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalles del Pedido</title>
+</head>
+<body>
+    <h1>Detalles del Pedido</h1>
+    <p>Cliente: {{ pedido.cliente.nombre }}</p>
+    <p>Fecha: {{ pedido.fecha }}</p>
+    <p>Estado: {{ pedido.estado }}</p>
+    <h2>Items</h2>
+    <ul>
+        {% for item in items %}
+        <li>{{ item.item_menu.nombre }} - {{ item.cantidad }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

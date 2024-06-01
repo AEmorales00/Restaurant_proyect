@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gestionar Inventario</title>
+</head>
+<body>
+    <h1>Gestionar Inventario</h1>
+    <a href="{% url 'agregar_inventario' %}">Agregar Nuevo Ítem</a>
+    <table>
+        <thead>
+            <tr>
+                <th>Ítem</th>
+                <th>Cantidad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in inventario %}
+            <tr>
+                <td>{{ item.item_menu.nombre }}</td>
+                <td>{{ item.cantidad }}</td>
+                <td>
+                    <a href="{% url 'editar_inventario' item.pk %}">Editar</a>
+                    <a href="{% url 'eliminar_inventario' item.pk %}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

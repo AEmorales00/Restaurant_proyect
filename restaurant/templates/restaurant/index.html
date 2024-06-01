@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página Principal</title>
+</head>
+<body>
+    <h1>Bienvenido al Sistema de Gestión del Restaurante</h1>
+    <p>Seleccione una opción del menú:</p>
+    <ul>
+        <li><a href="{% url 'crear_pedido' %}">Crear Pedido</a></li>
+        <li><a href="{% url 'gestionar_inventario' %}">Gestionar Inventario</a></li>
+        <li><a href="{% url 'gestionar_pagos' %}">Gestionar Pagos</a></li>
+        <li><a href="{% url 'generar_reportes' %}">Generar Reportes</a></li>
+    </ul>
+</body>
+</html>
